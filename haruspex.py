@@ -23,14 +23,14 @@ import matplotlib.pyplot as plt
 # TODO Export CSV with analysis info stamped in
 # TODO Pass in multiple logs
 
-minConfidenceThreshold = 100
-maxETE = 100.1
-maxEGO = 1.4
+minConfidenceThreshold = 1
+maxETE = 100.01
+maxEGO = 1.54
 minEGO = 0.6
-minRPM = 100
-maxDTPS = 0.01
+minRPM = 500
+maxDTPS = 0.001
 stoichiometricAFRPetrol = 14.7
-veChangeFriction = 1000
+veChangeFriction = 1
 sampleRejectionWindowWidth = 30
 
 def main():
