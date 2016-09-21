@@ -1,4 +1,4 @@
-#!/bin/python2
+#!/usr/bin/python2
 #import ipdb;ipdb.set_trace() # SET PDB BREAKPOINT
 
 import matplotlib as mpl
@@ -59,7 +59,7 @@ def main():
     veTable = importTable(args.ve[0], 'VE')
     assert len(kpaAxis)*len(rpmAxis) == len(veTable), "Axis don't fit VE table - Incorrect table files supplied?"
     veTable = veTable.reshape(len(kpaAxis), len(rpmAxis))
-    afrTable = importTable(args.afr[0], 'AP')
+    afrTable = importTable(args.afr[0], 'LR')
     assert len(kpaAxis)*len(rpmAxis) == len(afrTable), "Axis don't fit AFR table - For now the AFR table must be the same dimensions as the VE table"
     afrTable = afrTable.reshape(len(kpaAxis), len(rpmAxis))
     if (np.min(afrTable) > 3): # convert from AFR to Lambda
@@ -154,8 +154,8 @@ def importTable(file, macroKeyword):
 def dumpTable(table, macroKeyword):
     for index, value in np.ndenumerate(table):
         if (index[1] == 0):
-            sys.stdout.write("\n")
-        sys.stdout.write(" {0}({1:4.1f}),".format(macroKeyword, value))
+            sys.stdout.write(" // ?kPa\n")
+        sys.stdout.write("  {0}({1:4.1f}),".format(macroKeyword, value))
     sys.stdout.write("\n")
 
 def isLast(itr):
