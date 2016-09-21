@@ -154,9 +154,9 @@ def importTable(file, macroKeyword):
 def dumpTable(table, macroKeyword):
     for index, value in np.ndenumerate(table):
         if (index[1] == 0):
-            sys.stdout.write(" // ?kPa\n")
+            sys.stdout.write(" // ???kPa\n")
         sys.stdout.write("  {0}({1:4.1f}),".format(macroKeyword, value))
-    sys.stdout.write("\n")
+    sys.stdout.write(" // ???kPa\n")
 
 def isLast(itr):
     old = itr.next()
